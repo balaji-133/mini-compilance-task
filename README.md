@@ -28,6 +28,28 @@ The easiest way to run the entire stack is using Docker Compose:
    ```
 4. Access the frontend at [http://localhost](http://localhost) and the API at [http://localhost:5000](http://localhost:5000).
 
+## 🚀 Vercel Deployment
+
+Deploying a MERN stack on Vercel is highly efficient. Follow these steps:
+
+### 1. Backend Deployment (Express)
+1. Go to **Vercel Dashboard** and click **"Add New Project"**.
+2. Select this repository.
+3. In the project settings, set the **Root Directory** to `backend`.
+4. Add **Environment Variables**:
+   - `MONGODB_URI`: (Your Atlas URL)
+5. Deploy. Your backend URL will be something like `mini-compliance-backend.vercel.app`.
+
+### 2. Frontend Deployment (Vite)
+1. In Vercel, click **"Add New Project"** again.
+2. Select the same repository.
+3. In the project settings, set the **Root Directory** to `frontend`.
+4. Add **Environment Variables**:
+   - `VITE_API_URL`: (The URL of your deployed backend from Step 1).
+5. Deploy.
+
+---
+
 ## 📄 Local Setup Instructions
 
 ### 1. Backend Setup
