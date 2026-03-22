@@ -56,10 +56,10 @@ Deploying a MERN stack on Vercel is highly efficient. Follow these steps:
 1. Navigate to the `backend` directory: `cd backend`
 2. Install dependencies: `npm install`
 3. Set your MongoDB URI in a `.env` file:
-   ```env
-   MONGODB_URI=mongodb+srv://balajikundrapu:Balaji123456@cluster0.xgh87ph.mongodb.net/mini-compliance-tracker?retryWrites=true&w=majority&appName=Cluster0
-   PORT=5000
-   ```
+ # MongoDB Connection String (Replace with your own)
+   '''MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/mini-compliance-tracker'''
+
+
 4. **Seed the database:** Run `node seed.js` to populate dummy clients.
 5. Start the server: `npm run start`
 
