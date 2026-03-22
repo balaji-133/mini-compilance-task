@@ -21,7 +21,8 @@ export default function TaskList({ client }) {
   const fetchTasks = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${client._id}`);
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const res = await fetch(`${API_URL}/api/tasks/${client._id}`);
       const data = await res.json();
       setTasks(data);
     } catch (error) {
@@ -34,7 +35,8 @@ export default function TaskList({ client }) {
   const handleStatusToggle = async (task) => {
     try {
       const newStatus = task.status === 'Completed' ? 'Pending' : 'Completed';
-      const res = await fetch(`http://localhost:5000/api/tasks/${task._id}`, {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const res = await fetch(`${API_URL}/api/tasks/${task._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })

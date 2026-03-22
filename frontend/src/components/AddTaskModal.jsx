@@ -26,7 +26,8 @@ export default function AddTaskModal({ client, onClose, onTaskAdded }) {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/tasks', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const res = await fetch(`${API_URL}/api/tasks`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

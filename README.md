@@ -45,7 +45,7 @@ Deploying a MERN stack on Vercel is highly efficient. Follow these steps:
 2. Select the same repository.
 3. In the project settings, set the **Root Directory** to `frontend`.
 4. Add **Environment Variables**:
-   - `VITE_API_URL`: (The URL of your deployed backend from Step 1).
+   - `VITE_API_URL`: **(CRITICAL)** Set this to `https://mini-compilance-task.vercel.app` (Your Backend URL).
 5. Deploy.
 
 ---
