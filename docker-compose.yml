@@ -4,7 +4,7 @@ services:
     ports:
       - "5000:5000"
     environment:
-      - MONGODB_URI=mongodb+srv://balajikundrapu:Balaji123456@cluster0.xgh87ph.mongodb.net/mini-compliance-tracker?retryWrites=true&w=majority&appName=Cluster0
+      - MONGODB_URI=your_mongo_url
       - PORT=5000
 
   frontend:
