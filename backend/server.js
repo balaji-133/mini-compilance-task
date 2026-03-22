@@ -30,9 +30,11 @@ app.get('/', (req, res) => {
   res.send('Mini Compliance Tracker API is running!');
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+  });
+}
 
 // Export for Vercel
 module.exports = app;
