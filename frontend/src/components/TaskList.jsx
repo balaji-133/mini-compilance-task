@@ -21,7 +21,7 @@ export default function TaskList({ client }) {
   const fetchTasks = async () => {
     setLoading(true);
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/$/, '');
       const res = await fetch(`${API_URL}/api/tasks/${client._id}`);
       const data = await res.json();
       setTasks(data);
@@ -35,7 +35,7 @@ export default function TaskList({ client }) {
   const handleStatusToggle = async (task) => {
     try {
       const newStatus = task.status === 'Completed' ? 'Pending' : 'Completed';
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/$/, '');
       const res = await fetch(`${API_URL}/api/tasks/${task._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },

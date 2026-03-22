@@ -15,7 +15,7 @@ function App() {
   const fetchClients = async () => {
     try {
       setLoading(true);
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/$/, '');
       const res = await fetch(`${API_URL}/api/clients`);
       const data = await res.json();
       setClients(data);
